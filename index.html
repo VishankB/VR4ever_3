@@ -14,12 +14,16 @@
     justify-content: center;
     font-family: 'Segoe UI', sans-serif;
 
-    /* Chocolate background */
+    /* Deep chocolate background (no white) */
     background:
-      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-      url("https://images.unsplash.com/photo-1548907040-4baa42d10919?auto=format&fit=crop&w=1200&q=80");
+      linear-gradient(
+        rgba(60, 30, 10, 0.75),
+        rgba(60, 30, 10, 0.75)
+      ),
+      url("https://images.unsplash.com/photo-1606312619344-5d4e6c5c1b39?auto=format&fit=crop&w=1200&q=80");
+
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
   }
 
@@ -46,9 +50,9 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 248, 240, 0.96);
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 30px rgba(40, 20, 5, 0.6);
     backface-visibility: hidden;
     display: flex;
     flex-direction: column;
@@ -59,7 +63,7 @@
   }
 
   .front h1 {
-    color: #7b3f00;
+    color: #5a2d0c;
     margin-bottom: 20px;
   }
 
@@ -78,39 +82,39 @@
   .tap {
     margin-top: 15px;
     font-size: 0.9em;
-    color: #777;
+    color: #6b4a2d;
   }
 
   .back {
     transform: rotateY(180deg);
-    box-shadow: 0 0 35px rgba(123, 63, 0, 0.8);
+    box-shadow: 0 0 35px rgba(90, 45, 12, 0.9);
   }
 
   .back h2 {
-    color: #7b3f00;
+    color: #5a2d0c;
     margin-bottom: 12px;
   }
 
   .message {
     font-size: 1.05em;
-    color: #444;
+    color: #3f2a1a;
     line-height: 1.55;
   }
 
   .signature {
     margin-top: 18px;
     font-style: italic;
-    color: #7b3f00;
+    color: #5a2d0c;
     font-weight: bold;
   }
 </style>
 </head>
 <body>
 
-<!-- Sweet background music -->
+<!-- Romantic instrumental music -->
 <audio id="bgMusic" loop>
-  <!-- Replace with your own romantic music file if you want -->
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  <!-- Soft piano / romantic instrumental -->
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6c3c07c9b4.mp3?filename=romantic-piano-112191.mp3" type="audio/mpeg">
 </audio>
 
 <div class="card" id="card">
@@ -151,8 +155,7 @@
 <script>
   function flipCard() {
     document.getElementById("card").classList.add("flip");
-    const music = document.getElementById("bgMusic");
-    music.play();
+    document.getElementById("bgMusic").play();
   }
 </script>
 
