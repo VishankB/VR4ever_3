@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Happy Chocolate Day Ra ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+
+    /* Chocolate-themed gradient background */
+    background: linear-gradient(135deg, #3e1f0d 0%, #7b3f00 50%, #d2691e 100%);
+  }
+
+  .heart {
+    position: absolute;
+    color: rgba(255, 180, 180, 0.6);
+    font-size: 18px;
+    animation: floatUp 8s linear infinite;
+    z-index: 1;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+  }
+
+  .card {
+    width: 360px;
+    height: 540px;
+    perspective: 1000px;
+    z-index: 2;
+  }
+
+  .inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+
+  .card.flip .inner {
+    transform: rotateY(180deg);
+  }
+
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 26px;
+    text-align: center;
+  }
+
+  .front h1 {
+    color: #7b3f00;
+    margin-bottom: 20px;
+  }
+
+  .chocolate {
+    font-size: 4.8em;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  .tap {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #777;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+    box-shadow: 0 0 35px rgba(123, 63, 0, 0.8);
+  }
+
+  .back h2 {
+    color: #7b3f00;
+    margin-bottom: 12px;
+  }
+
+  .message {
+    font-size: 1.05em;
+    color: #444;
+    line-height: 1.55;
+  }
+
+  .signature {
+    margin-top: 18px;
+    font-style: italic;
+    color: #7b3f00;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<script>
+  for (let i = 0; i < 18; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "🍫";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.style.fontSize = (14 + Math.random() * 18) + "px";
+    document.body.appendChild(heart);
+  }
+</script>
+
+<div class="card" id="card">
+  <div class="inner">
+
+    <!-- FRONT -->
+    <div class="front">
+      <h1>Happy Chocolate Day 🍫</h1>
+      <div class="chocolate" onclick="flipCard()">🍫</div>
+      <div class="tap">Tap the chocolate</div>
+    </div>
+
+    <!-- BACK -->
+    <div class="back">
+      <h2>My Sweetest, Ra ❤️</h2>
+      <div class="message">
+        Ra ❤️,<br /><br />
+        Life with you is sweeter than<br />
+        the richest chocolate in the world.<br />
+        Every smile of yours melts my heart,<br />
+        and every moment with you<br />
+        feels like a beautiful indulgence.<br /><br />
+
+        Thank you for filling my life<br />
+        with warmth, love, and sweetness.<br />
+        You are my favorite treat —<br />
+        today and always 🍫❤️
+      </div>
+
+      <div class="signature">
+        — Yours forever ❤️
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function flipCard() {
+    document.getElementById("card").classList.add("flip");
+  }
+</script>
+
+</body>
+</html>
